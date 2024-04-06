@@ -56,10 +56,9 @@ parameter = st.selectbox("Seleccionar parámetro", ["pm25", "pm10", "no2", "o3",
 import datetime as dt
 # Gráfica de barras por mes
 dk = selected_df[["location", parameter, "date.utc"]]
-dk_ = dk.groupby([dk["date.utc"].dt.month, pd.Grouper(key="location")]).mean().dropna().reset_index(inplace=True,drop= True)
-
+dk_ = dk.groupby([dk["date.utc"].dt.month, pd.Grouper(key="location")]).mean().dropna()
 # Convertir los números de mes a nombres de mes
-#dk_.reset_index(inplace=True)
+dk_.reset_index(inplace=True)
 #dk_["date.utc"] = dk_["date.utc"].apply(lambda x: calendar.month_abbr[int(x)])
 
 # Crear la gráfica de barras con Plotly Express
