@@ -60,7 +60,7 @@ dk_ = dk.groupby([dk["date.utc"].dt.month, pd.Grouper(key="location")]).mean().d
 
 # Convertir los números de mes a nombres de mes
 dk_.reset_index(inplace=True)
-dk_["date.utc"] = dk_["date.utc"].apply(lambda x: calendar.month_abbr[int(x)])
+#dk_["date.utc"] = dk_["date.utc"].apply(lambda x: calendar.month_abbr[int(x)])
 
 # Crear la gráfica de barras con Plotly Express
 fig = px.bar(dk_, x='date.utc', y=parameter, color='location', barmode='group',
