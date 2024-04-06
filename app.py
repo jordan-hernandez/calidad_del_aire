@@ -7,9 +7,9 @@ import pytz
 import calendar
 
 # Leer los datos para cada año
-df_2020 =pd.read_csv("/home/jordan/Downloads/proyecto_calidad_del_aire.csv")
-df_2021 =pd.read_csv("../../Downloads/datos_calidad_2021.csv")
-df_2023 =pd.read_csv("/home/jordan/Downloads/datos_calidad_2.csv")
+df_2020 =pd.read_csv("./src/proyecto_calidad_del_aire.csv")
+df_2021 =pd.read_csv("./src/Downloads/datos_calidad_2021.csv")
+df_2023 =pd.read_csv("./src/jordan/Downloads/datos_calidad_2.csv")
 
 # Crear un diccionario para almacenar los DataFrames de cada año
 dataframes = {"2020": df_2020, "2021": df_2021, "2023": df_2023}
