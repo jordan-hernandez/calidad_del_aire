@@ -1,5 +1,5 @@
 streamlit
 plotly_express==0.4.0
-pandas 
+pandas==1.5.1
 #datetime
 pytz
