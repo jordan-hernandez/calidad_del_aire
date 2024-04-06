@@ -56,7 +56,7 @@ parameter = st.selectbox("Seleccionar parámetro", ["pm25", "pm10", "no2", "o3",
 import datetime as dt
 # Gráfica de barras por mes
 dk = selected_df[["location", parameter, "date.utc"]]
-dk_ = dk.groupby([dk["date.utc"].dt.month, pd.Grouper(key="location")]).mean().dropna().reset_index(inplace=True)
+dk_ = dk.groupby([dk["date.utc"].dt.month, pd.Grouper(key="location")]).mean().dropna().reset_index(inplace=True,drop= True)
 
 # Convertir los números de mes a nombres de mes
 #dk_.reset_index(inplace=True)
