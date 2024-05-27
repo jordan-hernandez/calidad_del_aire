@@ -18,6 +18,11 @@ st.set_page_config(layout="wide")
 # Título principal
 st.title("Calidad del aire en Medellín")
 
+# Sidebar
+st.sidebar.title("Opciones")
+# Añadir una imagen a la sidebar
+st.sidebar.image("./src/calidad_indicadores.png", use_column_width=True)
+
 # Menú desplegable para seleccionar el año
 selected_year = st.selectbox("Seleccionar año", list(dataframes.keys()))
 
