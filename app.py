@@ -64,8 +64,8 @@ dk_["date.utc"] = dk_["date.utc"].apply(lambda x: calendar.month_abbr[int(x)])
 # Crear la gráfica de barras con Plotly Express
 fig = px.bar(dk_, x='date.utc', y=parameter, color='location', barmode='group',
              labels={"date.utc": "Mes", parameter: f" Concentración  {parameter}  (&mu;g/m<sup>3</sup>)"},
-             width=200,  # Ancho de la gráfica en píxeles
-             height=1000   # Altura de la gráfica en píxeles
+             width=1000,  # Ancho de la gráfica en píxeles
+             height=400   # Altura de la gráfica en píxeles
              )
 # Mostrar la gráfica de barras en Streamlit
 # Agregar el código LaTeX al eje y de la gráfica
@@ -84,8 +84,8 @@ l = selected_df.groupby([selected_df["date.utc"].dt.hour, pd.Grouper(key="locati
 # Crear la gráfica de línea con Plotly Express
 fig2 = px.line(l.reset_index(), x='date.utc', y=parameter, color='location',
                labels={"date.utc": "Horas del día", parameter: f"Concentración {parameter}(&mu;g/m<sup>3</sup>)"},
-               width=200,  # Ancho de la gráfica en píxeles
-               height=1000   # Altura de la gráfica en píxeles
+               width=1000,  # Ancho de la gráfica en píxeles
+               height=400   # Altura de la gráfica en píxeles
                )
 
 # Mostrar la gráfica de línea en Streamlit
