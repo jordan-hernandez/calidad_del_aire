@@ -19,7 +19,7 @@ st.set_page_config(layout="wide")
 st.title("Calidad del aire en Medellín")
 
 # Sidebar
-st.sidebar.title("Opciones")
+st.sidebar.title("Indicadores")
 # Añadir una imagen a la sidebar
 st.sidebar.image("./calidad_indicadores.png",use_column_width=True)
 
