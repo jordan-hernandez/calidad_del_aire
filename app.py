@@ -84,7 +84,7 @@ l = selected_df.groupby([selected_df["date.utc"].dt.hour, pd.Grouper(key="locati
 # Crear la gráfica de línea con Plotly Express
 fig2 = px.line(l.reset_index(), x='date.utc', y=parameter, color='location',
                labels={"date.utc": "Horas del día", parameter: f"Concentración {parameter}(&mu;g/m<sup>3</sup>)"},
-               width=1300,  # Ancho de la gráfica en píxeles
+               width=900,  # Ancho de la gráfica en píxeles
                height=600   # Altura de la gráfica en píxeles
                )
 
