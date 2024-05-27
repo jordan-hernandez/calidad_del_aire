@@ -14,6 +14,7 @@ df_2023 =pd.read_csv("./src/datos_calidad_2.csv")
 # Crear un diccionario para almacenar los DataFrames de cada año
 dataframes = {"2020": df_2020, "2021": df_2021, "2023": df_2023}
 
+st.set_page_config(layout="wide")
 # Título principal
 st.title("Calidad del aire en Medellín")
 
