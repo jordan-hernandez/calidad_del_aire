@@ -5,7 +5,7 @@ import datetime
 import pandas as pd
 import pytz
 import calendar
-
+import numpy as np 
 # Leer los datos para cada año
 df_2020 =pd.read_csv("./src/proyecto_calidad_del_aire.csv")
 df_2021 =pd.read_csv("./src/datos_calidad_2021.csv")

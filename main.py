@@ -1,27 +1,21 @@
-import streamlit as st
-import pandas as pd
+import requests
 
-def main():
-    # Coordenadas de ejemplo
-    latitude = 6.19987
-    longitude = -75.560951
+def get_page(date_from, date_to, api_key):
+    response = requests.get(
+        "https://api.openaq.org/v2/measurements",
+        params={
+            "city": "Cali",
+            "date_from": date_from,
+            "date_to": date_to,
+            "limit": "10000",
+            "order": "asc",
+        },
+        headers={
+            "Authorization": f"Bearer {"54a8076ac004468de579c72682f37e15fbf6298e81105a0e6d54713ad4db4704"}"  # Usa tu clave de API aquí
+        }
+    )
+    return response.json()
 
-    # Título HTML personalizado con CSS para centrarlo
-    title_html = f"""
-    <div style="position:relative; text-align:center;">
-        <h1 style="position:relative; color:#2a7fff;">Ubicación de ejemplo</h1>
-    </div>
-    """
-
-    # Añadir el título HTML al diseño
-    st.markdown(title_html, unsafe_allow_html=True)
-
-    # Crear un DataFrame con las coordenadas
-    data = pd.DataFrame({"LATITUDE": [latitude], "LONGITUDE": [longitude]})
-
-    # Añadir el mapa al diseño
-    st.map(data)
-
-if __name__ == "__main__":
-    main()
-
+# Ejemplo de uso
+api_key = "54a8076ac004468de579c72682f37e15fbf6298e81105a0e6d54713ad4db4704"
+data = get_page("2023-01-01T00:00:00Z", "2023-01-31T23:59:59Z", api_key)
